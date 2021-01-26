@@ -1,2 +1,7 @@
 image:
   file: Dockerfile
+
+tasks:
+  - name: test
+    init: fpc test.pas
+    command: ./test
