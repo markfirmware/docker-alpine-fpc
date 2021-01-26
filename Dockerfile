@@ -5,7 +5,9 @@ ENV FPC_VERSION="3.2.0" \
 
 RUN apk add --no-cache binutils && \
     cd /tmp && \
-    wget "https://downloads.sourceforge.net/project/freepascal/Linux/${FPC_VERSION}/fpc-${FPC_VERSION}-${FPC_ARCH}.tar" -O fpc.tar && \
+#   wget "https://downloads.sourceforge.net/project/freepascal/Linux/${FPC_VERSION}/fpc-${FPC_VERSION}-${FPC_ARCH}.tar" -O fpc.tar && \
+    wget "https://sourceforge.net/projects/freepascal/files/Linux/${FPC_VERSION}/fpc-${FPC_VERSION}-${FPC_ARCH}.tar" -O fpc.tar && \
+    wget "https://sourceforge.net/projects/freepascal/files/Source/${FPC_VERSION}/fpc-${FPC_VERSION}.source.tar.gz" -O fpc-source.tar.gz && \
     tar xf "fpc.tar" && \
     cd "fpc-${FPC_VERSION}-${FPC_ARCH}" && \
     rm demo* doc* && \
@@ -14,11 +16,12 @@ RUN apk add --no-cache binutils && \
     mkdir /lib64 && \
     ln -s /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2 && \
     \
-    echo -e '/usr\nN\nN\nN\n' | sh ./install.sh && \
-    find "/usr/lib/fpc/${FPC_VERSION}/units/${FPC_ARCH}/" -type d -mindepth 1 -maxdepth 1 \
-        -not -name 'fcl-base' \
-        -not -name 'rtl' \
-        -not -name 'rtl-console' \
-        -not -name 'rtl-objpas' \
-        -exec rm -r {} \; && \
-    rm -r "/lib64" "/tmp/"*
+    echo -e '/usr\nN\nN\nN\n' | sh ./install.sh
+#   find "/usr/lib/fpc/${FPC_VERSION}/units/${FPC_ARCH}/" -type d -mindepth 1 -maxdepth 1 \
+#       -not -name 'fcl-base' \
+#       -not -name 'rtl' \
+#       -not -name 'rtl-console' \
+#       -not -name 'rtl-objpas' \
+#       -exec rm -r {} \; && \
+#   rm -r "/lib64" "/tmp/"*
+
