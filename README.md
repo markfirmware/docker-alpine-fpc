@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/markfirmware/docker-alpine-fpc-http-server)
+
 [![Docker Stars](https://img.shields.io/docker/stars/frolvlad/alpine-fpc.svg?style=flat-square)](https://hub.docker.com/r/frolvlad/alpine-fpc/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/frolvlad/alpine-fpc.svg?style=flat-square)](https://hub.docker.com/r/frolvlad/alpine-fpc/)
 
